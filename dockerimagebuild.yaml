@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Create docker images using war artifactory
+    command: docker build -t project2:latest .
+
+  - name: create tag to image
+    command: docker tag project2:latest sreeramakumar/project2:latest
+
+  - name: push image to docker hub
+    command: docker push sreeramakumar/project2:latest
+
+  - name: remove docker image from docker server server post image push
+    command: docker rmi project2:latest sreeramakumar/project2:latest
+    ignore_errors: yes
