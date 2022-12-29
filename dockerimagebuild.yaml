@@ -1,8 +1,7 @@
 ---
 - name: docker image build and push to docker hub
-  hosts: local
+  hosts: all
   gather_facts: no
-  connection: local
   become: yes
   tasks:
   - name: Create docker images using war artifactory
