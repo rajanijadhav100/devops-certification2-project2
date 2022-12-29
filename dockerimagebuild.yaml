@@ -4,7 +4,6 @@
   gather_facts: no
   connection: local
   become: yes
-  become_user: docker
   tasks:
   - name: Create docker images using war artifactory
     command: docker build -t project2:latest .
