@@ -3,7 +3,10 @@
   become: true
   tasks:
     - name: deploy project2 docker container
-      command: docker stop project2
-      command: docker rm project2
-      command: sleep 15
+      command: docker stop $(docker ps -a -q)
+      command: sleep 5
+      command: docker rm $(docker ps -a -q)
+      command: sleep 5
+      command: docker container prune
+      command: sleep 5
       command: docker run -d --name project2 -p 8080:80 sreeramakumar/project2:latest
