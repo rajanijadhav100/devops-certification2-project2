@@ -1,5 +1,6 @@
 ---
 - name: docker image build and push to docker hub
+  hosts: all
   connection: local
   become: yes
   become_user: root
