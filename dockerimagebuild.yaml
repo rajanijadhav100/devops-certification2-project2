@@ -1,6 +1,6 @@
 ---
 - name: docker image build and push to docker hub
-  hosts: all
+  hosts: local
   gather_facts: no
   connection: local
   become: yes
