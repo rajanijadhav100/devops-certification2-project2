@@ -1,6 +1,8 @@
 ---
-- hosts: localhost
-  become: true
+- hosts: local
+  connection: local
+  become: yes
+  become_user: root
   tasks:
   - name: Create docker images using war artifactory
     command: docker build -t project2:latest .
