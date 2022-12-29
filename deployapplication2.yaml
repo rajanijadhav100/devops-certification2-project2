@@ -3,4 +3,4 @@
   become: true
   tasks:
     - name: deploy project2 docker container
-      command: docker run -d --name project2 -p 8090:80 sreeramakumar/project2:latest
+      command: docker run -d --name project2 -p 8080:80 sreeramakumar/project2:latest
