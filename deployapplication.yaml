@@ -1,0 +1,12 @@
+---
+- hosts: 172.31.12.40
+  become: true
+  tasks:
+    - name: deploy project2 docker container
+      docker_container:
+        image: sreeramakumar/project2:latest
+        name: project2
+        state: started
+        auto_remove: true
+        ports:
+          - "8090:80"
