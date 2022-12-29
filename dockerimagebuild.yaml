@@ -1,5 +1,6 @@
 ---
 - hosts: localhost
+  become: true
   tasks:
   - name: Create docker images using war artifactory
     command: docker build -t project2:latest .
