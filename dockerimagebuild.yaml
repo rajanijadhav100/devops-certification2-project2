@@ -10,6 +10,9 @@
 
   - name: create tag to image
     command: docker tag project2:latest sreeramakumar/project2:latest
+    
+  - name: docker hub login
+    command: docker login --username sreeramakumar --password Dmur_int2
 
   - name: push image to docker hub
     command: docker push sreeramakumar/project2:latest
