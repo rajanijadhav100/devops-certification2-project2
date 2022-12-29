@@ -1,6 +1,6 @@
 ---
 - name: "AWS - Install docker"
-  hosts: 172.31.12.40
+  hosts: all
   become: yes
   tasks:
     - name: Update all packages
