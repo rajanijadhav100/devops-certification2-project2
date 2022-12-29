@@ -2,7 +2,7 @@
 - hosts: 172.31.12.40
   become: true
   vars:
-    ansible_python_interpreter: /usr/bin/python
+    ansible_python_interpreter: /usr/bin/python3
   tasks:
     - name: deploy project2 docker container
       docker_container:
