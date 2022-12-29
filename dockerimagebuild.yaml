@@ -1,5 +1,5 @@
 ---
-- hosts: local
+- hosts: 172.31.43.154
   connection: local
   become: yes
   become_user: root
