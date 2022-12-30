@@ -1,4 +1,2 @@
-FROM php
-COPY ./* ./
-EXPOSE 80
-CMD ["php","-S","0.0.0.0:80"]
+FROM php:7.0-apache    
+COPY . /var/www/php
