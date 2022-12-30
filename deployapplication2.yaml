@@ -11,4 +11,4 @@
       command: sleep 5
       command: docker rmi $(docker images -a -q)
       command: sleep 5
-      command: docker run -d --name project2 -p 8080:80 sreeramakumar/project2:latest
+      command: docker run -d -p 8080:80 sreeramakumar/project2:latest
