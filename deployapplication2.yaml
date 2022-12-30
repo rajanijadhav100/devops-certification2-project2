@@ -2,13 +2,17 @@
 - hosts: 172.31.12.40
   become: true
   tasks:
-    - name: deploy project2 docker container
-      command: "docker stop $(docker ps -a -q) -f"
-      command: sleep 5
-      command: "docker rm $(docker ps -a -q) -f"
-      command: sleep 5
-      command: "docker container prune -f"
-      command: sleep 5
-      command: "docker rmi $(docker images -a -q) -f"
-      command: sleep 5
-      command: docker run -d -p 80:80 sreeramakumar/project2:latest
+    - name: stop project2 docker container
+      command: docker stop project2
+      ignore_errors: yes
+      
+    - name: remove stoped container
+      command: docker rm project2
+      ignore_errors: yes
+      
+    - name: remove docker image
+      command: docker rmi sreeramakumar/project2:latest
+      ignore_errors: yes
+      
+    - name: create container using sreeramakumar/project2:latest
+      command: docker run -d --name project2 -p 3000:3000 sreeramakumar/project2:latest
