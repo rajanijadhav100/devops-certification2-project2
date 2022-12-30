@@ -3,12 +3,12 @@
   become: true
   tasks:
     - name: deploy project2 docker container
-      command: docker stop $(docker ps -a -q)
+      command: "docker stop $(docker ps -a -q)"
       command: sleep 5
-      command: docker rm $(docker ps -a -q)
+      command: "docker rm $(docker ps -a -q)"
       command: sleep 5
-      command: docker container prune
+      command: "docker container prune"
       command: sleep 5
-      command: docker rmi $(docker images -a -q)
+      command: "docker rmi $(docker images -a -q)"
       command: sleep 5
       command: docker run -d -p 80:80 sreeramakumar/project2:latest
