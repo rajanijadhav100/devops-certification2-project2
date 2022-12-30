@@ -1,2 +1,4 @@
-FROM php:7.0-apache    
-COPY . /var/www/php
+FROM php
+COPY ./* ./
+EXPOSE 3000
+CMD ["php", "-S", "0.0.0.0:3000"]
