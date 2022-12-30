@@ -5,7 +5,7 @@
   become: yes
   tasks:
   - name: Create docker images using war artifactory
-    command: docker build -t project2:latest /var/lib/jenkins/workspace/Certification\ Project\ -\ 2
+    command: docker build -t project2:latest /var/lib/jenkins/workspace/certificationproject2
 
 
   - name: create tag to image
