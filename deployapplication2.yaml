@@ -7,7 +7,7 @@
       command: sleep 5
       command: "docker rm $(docker ps -a -q)"
       command: sleep 5
-      command: "docker container prune"
+      command: "docker container prune -f"
       command: sleep 5
       command: "docker rmi $(docker images -a -q)"
       command: sleep 5
