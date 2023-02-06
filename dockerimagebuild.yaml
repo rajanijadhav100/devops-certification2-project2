@@ -5,18 +5,18 @@
   become: yes
   tasks:
   - name: Create docker images using war artifactory
-    command: docker build -t project2:latest /var/lib/jenkins/workspace/certificationproject2
+    command: docker build -t project2:latest /var/lib/jenkins/workspace/project2
 
 
   - name: create tag to image
-    command: docker tag project2:latest sreeramakumar/project2:latest
+    command: docker tag project2:latest rajanigandhaj/project2:latest
     
   - name: docker hub login
-    command: docker login --username sreeramakumar --password Dmur_int2
+    command: docker login --username rajanigandhaj --password Rajani@06
 
   - name: push image to docker hub
-    command: docker push sreeramakumar/project2:latest
+    command: docker push rajanigandhaj/project2:latest
 
   - name: remove docker image from docker server server post image push
-    command: docker rmi project2:latest sreeramakumar/project2:latest
+    command: docker rmi project2:latest rajanigandhaj/project2:latest
     ignore_errors: yes
