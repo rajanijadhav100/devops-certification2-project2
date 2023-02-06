@@ -14,5 +14,5 @@
       command: docker rmi rajanigandhaj/project2:latest
       ignore_errors: yes
       
-    - name: create container using sreeramakumar/project2:latest
+    - name: create container using rajanigandhaj/project2:latest
       command: docker run -d --name project2 -p 3000:3000 rajanigandhaj/project2:latest
